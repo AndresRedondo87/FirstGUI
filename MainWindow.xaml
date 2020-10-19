@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Das ist Mein Fenster! NUR MEIN FENSTER!! MEINS!!" Height="232.014" Width="475.36">
     <Grid>
-        
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="50,50,0,0" TextWrapping="Wrap" Text="Hey Hallo! Ich bin ein TextBox! Gar kein Label oder so was...!" VerticalAlignment="Top" Width="390" />
+        <TextBlock HorizontalAlignment="Left" Margin="50,100,0,0" TextWrapping="Wrap" Text="HALLO ANDRES..." VerticalAlignment="Top"/>
+
+        <Button Content="Dies ist ein Button" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Width="150"/>
+
     </Grid>
 </Window>
