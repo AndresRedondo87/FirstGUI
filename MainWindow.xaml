@@ -5,12 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstGUI"
         mc:Ignorable="d"
-        Title="Das ist Mein Fenster! NUR MEIN FENSTER!! MEINS!!" Height="232.014" Width="475.36">
-    <Grid>
-        <TextBox  HorizontalAlignment="Left" Height="23" Margin="50,50,0,0" TextWrapping="Wrap" Text="Hey Hallo! Ich bin ein TextBox! Gar kein Label oder so was...!" VerticalAlignment="Top" Width="390" />
-        <TextBlock HorizontalAlignment="Left" Margin="50,100,0,0" TextWrapping="Wrap" Text="HALLO ANDRES..." VerticalAlignment="Top"/>
+        Title="MEIN FENSTER" Height="232.014" Width="475.36">
+    <!--Kommentare einfügen-->
+    <!-- eXtensible Application Markup Language -->
+    <!--<Grid>
+        --><!--<TextBox  HorizontalAlignment="Left" Height="23" Margin="50,50,0,0" TextWrapping="Wrap" Text="Hey Hallo! Ich bin ein TextBox! Gar kein Label oder so was...!" VerticalAlignment="Top" Width="390" />-->
+        <!--<TextBlock HorizontalAlignment="Left" Margin="50,100,0,0" TextWrapping="Wrap" Text="HALLO ANDRES..." VerticalAlignment="Top"/>
 
         <Button Content="Dies ist ein Button" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Width="150"/>
-
-    </Grid>
+        <Button Content="click mich!" Height="40" Width="100"  FontSize="16" />-->        
+        <!--Um Code-Snippets oder wie auch immer zu verwenden, einfach der > eingeben, damit wird automatisch das Objekt schluss selber generiert! SEHR PRAKTISCH!!--><!--
+        <Button>
+            <Button.FontSize>32</Button.FontSize>
+            <Button.Width>250</Button.Width>
+            <Button.Height>100</Button.Height>
+            <Button.Content>
+                <WrapPanel>
+                    --><!--wrappanel versuch die Inhälte nebeninander von links zu rechts zu zeigen 
+                    und wenn es nicht mehr passt in eine neue Linie!--><!--
+                    <TextBlock Foreground="Blue" Background="Gray" >Multi</TextBlock>
+                    --><!--Vordergrund,bzw. Schriftfarbe--><!--
+                    <TextBlock Foreground="Red" Background="Gray" >Color</TextBlock>
+                    <TextBlock Foreground="green" Background="Gray" >Button</TextBlock>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+    </Grid>-->
+    
+    
 </Window>
