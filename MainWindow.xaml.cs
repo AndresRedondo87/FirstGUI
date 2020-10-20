@@ -20,6 +20,20 @@ namespace FirstGUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        //// wir setzen unsere eigene DependencyProperty selber:
+        //public int MyProperty
+        //{
+        //    get { return (int)GetValue(myDependencyProperty); }
+        //    set { SetValue(myDependencyProperty,value); }
+        //}
+        //public static readonly DependencyProperty myDependencyProperty =
+        //    DependencyProperty.Register("MyProperty", typeof(int), typeof(MainWindow), new PropertyMetadata(0));
+        //// WAS AUCH IMMER DIESE GANZE SYNTAX BEDEUTEN SOLLTE.... typeof(int) fürs erstes mal gesehen...nicht erklärt...NATÜRLICH NICHT!!
+        //// wird sowieso sogut wie nie verwendet... alle die DependencyProperty sind überaus ausreichend!!
+        //// dies wird nichtmal vewendet oder angezeigt was es machen könnte... TOLL
+
+
         public MainWindow()     //das ist wie unsere Main in Konsolenapplikationen
         {
             InitializeComponent();
@@ -49,7 +63,7 @@ namespace FirstGUI
             ////txt.Text = "Multi";
             ////txt.Foreground = Brushes.Blue;
 
-           
+
             ////// textblöcke als Inhälte von WrapPanel setzen
             ////wrapPanel.Children.Add(txt);
             ////// "Herausforderung" Texte vervollständigen
@@ -72,6 +86,14 @@ namespace FirstGUI
 
             ////// und Inhalt von unser grid hinzufügen der Button.
             ////grid.Children.Add(btn);
+            ///
+
+            ////Dependency Properties und Triggers...
+            //Button button = new Button();
+            ////Rechte maus auf Button und gehe zu Definition...
+            //// und dann auf ButtonBase Definition...
+            //// und ContentControl, Control...
+            //// alle Dependency Properties kommen aus diese oberen Klassen, sie sind sowie geerbt.
 
         }
 
