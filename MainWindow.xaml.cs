@@ -95,6 +95,9 @@ namespace FirstGUI
             //// und ContentControl, Control...
             //// alle Dependency Properties kommen aus diese oberen Klassen, sie sind sowie geerbt.
 
+
+            MySlider.Value = 33;
+            MyTextBox.Text = MySlider.Value.ToString();
         }
 
         //Generierter event wenn click auf Button mit Sender und Argumente e...

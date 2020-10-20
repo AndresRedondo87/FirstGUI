@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstGUI"
         mc:Ignorable="d"
-        Title="MEIN FENSTER" Height="200" Width="250">
+        Title="MEIN FENSTER" Height="200" Width="600">
 
     <!--<StackPanel> --><!--Sachen aufeinander stapeln--><!--
         <TextBlock HorizontalAlignment="Center" Margin="10">Hallo Welt</TextBlock>  --><!--Margin 20 setzt ein Minimal abstand in ALLE richtngen, hier sieht man nur oben und unten, ist aber un ALLE Richtungen-->
@@ -93,6 +93,41 @@
                 </Style>
             </Button.Style>
         </Button>
+            <!--DATABINDING - Slider Wert mit den TextBox verbinden...WIE?-->
+
+            <!--4 Modi der Datenbindung
+            Bindungsziel:   <-    oneWay            Bindungsquelle
+            Bindungsziel:   <-    twoWay     ->     Bindungsquelle 
+            Bindungsziel:        oneWayToSource   ->Bindungsquelle
+            Bindungsziel:   <_ _ _  OneTime         Bindungsquelle - wird im Konstruktor also nur einmal während 
+                                                                     der Initialisierung gemacht           
+            -->
+        <!-- Textbox ist das Ziel-->
+        <!--<TextBox Grid.Column="0" Grid.Row="0" Width="50" Margin="10" Text="Text15"></TextBox>-->
+        <!--<TextBox Grid.Column="0" Grid.Row="0" Width="50" Margin="10" Text="{Binding ElementName=MySlider, Path=Value, Mode=OneWay}"></TextBox>-->
+            <!--Hier  sagen wir, den TextBox Text ist verbunden mit den Slider Element, eigentlich um sein Value, und wie? nur OneWay, so zu sagen nur darstellen was der Slider für ein Value hat.
+             Wenn wir in TextBox den Wert ändern, bleibt der Slider gleich, da es nur OneWay ist-->
+
+
+        <!--<TextBox Name="MyTextBox" Grid.Column="0" Grid.Row="0" Width="50" Margin="10" Text="{Binding ElementName=MySlider, Path=Value, Mode=TwoWay}"></TextBox>-->
+        <!--Hier wie? TwoWay, so zu sagen  darstellen was der Slider für ein Value hat UND wenn wir in TextBox den Wert ändern, der Slider ändert sich entsprechend-->
+
+        <!--<TextBox Name="MyTextBox" Grid.Column="0" Grid.Row="0" Width="50" Margin="10" Text="{Binding ElementName=MySlider, Path=Value, Mode=OneWayToSource}"></TextBox>-->
+        <!--Nur wenn wir in TextBox den Wert ändern, der Slider ändert sich entsprechend-->
+
+        <!--<TextBox Name="MyTextBox" Grid.Column="0" Grid.Row="0" Width="50" Margin="10" Text="{Binding ElementName=MySlider, Path=Value, Mode=OneTime}"></TextBox>-->
+        <!--Nur einmal am Anfang wird gesetzt und dan nichts mehr reagiert.Auf keine Richtung-->
+
+        <TextBox Name="MyTextBox" Grid.Column="0" Grid.Row="0" Width="50" Margin="10" Text="{Binding ElementName=MySlider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <!--Hier wie? TwoWay,+extra  ändert sich sofort, sichtbar beim Zaheingabe 25, wird erst 2 und dan 25 bewegt, wenn wir 250 eingeben, setzt sich auf 100 (Maximum in Slicer Wet)-->
+
+        <!--<TextBox Name="MyTextBox" Grid.Column="0" Grid.Row="0" Width="50" Margin="10" Text="{Binding ElementName=MySlider, Path=Background, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>-->
+        <!--Hier wie? TwoWay,+extra Path=Background ändert sofort der HintergrundFarbe von Slider wenn wir ein gültiger RGB Code in den Text eingeben... etwas doof aber geht -->
+
+
+        <!-- Slider ist die Quelle -->
+        <!--<Slider Name="MySlider" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100"/>-->
+        <Slider Name="MySlider" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100" IsSnapToTickEnabled="True"/> <!--IsSnapToTickEnabled:Nur ganzzählige Werte darstellen.-->
     </Grid>
     
 
