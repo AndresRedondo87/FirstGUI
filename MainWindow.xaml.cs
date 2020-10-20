@@ -25,57 +25,74 @@ namespace FirstGUI
             InitializeComponent();
 
 
-            // WAS WIR IN DER XAML Schreiben wird intern als CodeBehind Übersetzt und ausgeführt!!
-            // Aber wenn wir es nur via CodeBehind setzen, dann ist es NICHT VERFÜGBAR in der xaml Entwurf view!!
-            // XAML ist sehr Praktisch um alles sichtbar und verstandbar darstellen und Programmieren!!
+            ////// WAS WIR IN DER XAML Schreiben wird intern als CodeBehind Übersetzt und ausgeführt!!
+            ////// Aber wenn wir es nur via CodeBehind setzen, dann ist es NICHT VERFÜGBAR in der xaml Entwurf view!!
+            ////// XAML ist sehr Praktisch um alles sichtbar und verstandbar darstellen und Programmieren!!
 
-            //wir setzen ein grid:
-            Grid grid = new Grid();
-            this.Content = grid;
-            // so das grid ist der inhalt von unsere MainWindow.
+            //////wir setzen ein grid:
+            ////Grid grid = new Grid();
+            ////this.Content = grid;
+            ////// so das grid ist der inhalt von unsere MainWindow.
 
-            //mit einem Button
-            Button btn = new Button();
-            btn.FontSize = 26;
-            //"Herausforderung" Button Größe korrigieren
-            btn.Height = 100;
-            btn.Width = 250;
+            //////mit einem Button
+            ////Button btn = new Button();
+            ////btn.FontSize = 26;
+            //////"Herausforderung" Button Größe korrigieren
+            ////btn.Height = 100;
+            ////btn.Width = 250;
 
-            //und ein WrapPanel
-            WrapPanel wrapPanel = new WrapPanel();
+            //////und ein WrapPanel
+            ////WrapPanel wrapPanel = new WrapPanel();
 
-            //textblöcke 
-            TextBlock txt = new TextBlock();
-            txt.Text = "Multi";
-            txt.Foreground = Brushes.Blue;
+            //////textblöcke 
+            ////TextBlock txt = new TextBlock();
+            ////txt.Text = "Multi";
+            ////txt.Foreground = Brushes.Blue;
 
            
-            // textblöcke als Inhälte von WrapPanel setzen
-            wrapPanel.Children.Add(txt);
-            // "Herausforderung" Texte vervollständigen
-            // wir überschreiben mit "new" unsere txt TextBlock, 
-            // anstatt txt2 und txt3 zu verbrauchen.... BEIDE GEHEN.
-            txt = new TextBlock();
-            txt.Text = "Color";
-            txt.Foreground = Brushes.Red;
+            ////// textblöcke als Inhälte von WrapPanel setzen
+            ////wrapPanel.Children.Add(txt);
+            ////// "Herausforderung" Texte vervollständigen
+            ////// wir überschreiben mit "new" unsere txt TextBlock, 
+            ////// anstatt txt2 und txt3 zu verbrauchen.... BEIDE GEHEN.
+            ////txt = new TextBlock();
+            ////txt.Text = "Color";
+            ////txt.Foreground = Brushes.Red;
 
-            wrapPanel.Children.Add(txt);
+            ////wrapPanel.Children.Add(txt);
 
-            txt = new TextBlock();
-            txt.Text = "Button";
-            txt.Foreground = Brushes.Green;
+            ////txt = new TextBlock();
+            ////txt.Text = "Button";
+            ////txt.Foreground = Brushes.Green;
 
-            wrapPanel.Children.Add(txt);
+            ////wrapPanel.Children.Add(txt);
 
-            // Der Inhalt von Button ist unser wrapPanel..
-            btn.Content = wrapPanel;
+            ////// Der Inhalt von Button ist unser wrapPanel..
+            ////btn.Content = wrapPanel;
 
-            // und Inhalt von unser grid hinzufügen der Button.
-            grid.Children.Add(btn);
+            ////// und Inhalt von unser grid hinzufügen der Button.
+            ////grid.Children.Add(btn);
 
         }
 
+        //Generierter event wenn click auf Button mit Sender und Argumente e...
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Danke fürs klicken!!");
+            // hier ein Breakpoint setzen, dann ausführen und button drücken.
+            // es wird hier anhalten, dann in Auto Fenster, unter Wert für "sender" ganz rechts die Lupe auswählen und WPF Tree Visualizer auswählen!
+            // es zeigt die ganze Hierarchie bis dieses Objekt:
+            // VISUELLER BAUM zeigt Graphisch wo dieses Objekt liegt. NUR DIE "LINIE" zu unsere Objekt, nicht alle "Branches" so zu sagen, nur unsere...
+            // da sind alle Objekte dargestellt, auch wenn sie unsichtbar sind. auch alle die default gesetzten Eigenschaften werden angezeigt.
+            // EIGENSCHAFTEN VON: Button (in diesem fall) zeigt ALLE die egenschaften von dieses Button oder das ausgewählte Objekt vom Button. Kann man nicht direkt ändern
 
+        }
+
+        //// selber erstellt Event-Methode, brauchen immer sender und RoutedEventArgs. Damit wird zur auswahl in XAML IntelliSense direkt angezeigt.
+        //private void MeineEigeneKlickMethode(object sender, RoutedEventArgs rea)
+        //{
+
+        //}
     }
 }
 
