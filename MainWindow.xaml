@@ -21,7 +21,7 @@
         </ListBox>
 
         <!--Attributen erkennen via Symbole: Schraubenschlussel sind Properties, Blitz sind Events wie z.B. hover, Click, valuechanged... Die können automatisch erstellt werden, wie CodeSnippets-->
-        <Button Content="Klicke mich!!" Margin="5"  Width="140" Click="Button_Click"/>
+        <Button Content="Klicke mich!!" Margin="5"  Width="100" Click="Button_Click" MouseUp="Button_MouseUp" PreviewMouseUp="Button_PreviewMouseUp" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseRightButtonUp="Button_PreviewMouseRightButtonUp"/>
         <!--Margin war "Herausforderung", LOL ich hatte es schon selber erledigt...-->
 
     </StackPanel>

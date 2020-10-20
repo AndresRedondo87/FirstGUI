@@ -78,7 +78,7 @@ namespace FirstGUI
         //Generierter event wenn click auf Button mit Sender und Argumente e...
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Danke fürs klicken!!");
+            MessageBox.Show("Direkter Event(Ereigniss) \nDanke fürs klicken.");
             // hier ein Breakpoint setzen, dann ausführen und button drücken.
             // es wird hier anhalten, dann in Auto Fenster, unter Wert für "sender" ganz rechts die Lupe auswählen und WPF Tree Visualizer auswählen!
             // es zeigt die ganze Hierarchie bis dieses Objekt:
@@ -86,6 +86,44 @@ namespace FirstGUI
             // da sind alle Objekte dargestellt, auch wenn sie unsichtbar sind. auch alle die default gesetzten Eigenschaften werden angezeigt.
             // EIGENSCHAFTEN VON: Button (in diesem fall) zeigt ALLE die egenschaften von dieses Button oder das ausgewählte Objekt vom Button. Kann man nicht direkt ändern
 
+            // Das ist ein Standard Event, das am meistens benutzt wird
+        }
+
+        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Bubbling Event(Ereigniss) \nButton wurde losgelassen.");
+            // wie eine Blase die nach oben geht... in der Visual Tree!!
+            // es schickt der Event nach oben, immer weiter bis irgendeine Stufe es handeln kann...
+            // wenn es nirgendwo behandelt ist, wird es verloren gehen... muss man anpassen in diesem fall.
+            // NICHT MEHR ERKLÄRT!!!!!
+        }
+
+        private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Tunneling Event(Ereigniss) \nButton L/R wurde losgelassen.");
+            // Preview = Tunneling, es auchtet drauf waas es passieren wird...
+            // es schickt der Event nach unten in TreeView
+            // WAS SOWAS FÜR UNS BEDEUTET WIRD NICHT RICHTIG ERKLÄRT...
+        }
+
+        /// <summary>
+        /// EVENTS: Routed Events - Direct, am meistens benutzt und einfacher zu  nachvollziehen
+        ///         Bubbling      - wie eine Blase die nach oben geht... in der Visual Tree!!
+        //                          es schickt der Event nach oben, immer weiter bis irgendeine Stufe es handeln kann...
+        //                          wenn es nirgendwo behandelt ist, wird es verloren gehen... muss man anpassen in diesem fall.
+        ///         Tunneling     - Preview = Tunneling, es auchtet drauf waas es passieren wird...
+        ///                         es schickt der Event nach unten in TreeView...
+        /// ZUSAMMENFASSUNG - Einfache Direct Events verwenden!!
+        /// </summary>
+
+        private void Button_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Tunneling Event(Ereigniss) \nButton Left wurde angeclickt.");
+        }
+
+        private void Button_PreviewMouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Tunneling Event(Ereigniss) \nButton wurde Right losgelassen.\nRight Mouse Clicks should display more info");
         }
 
         //// selber erstellt Event-Methode, brauchen immer sender und RoutedEventArgs. Damit wird zur auswahl in XAML IntelliSense direkt angezeigt.
