@@ -76,7 +76,7 @@
 
 
 
-        <Button Grid.Column="1" Grid.Row="1" Width="70" Height="40" Background="PaleVioletRed" FontSize="10" Content="klickt mich">
+        <Button Grid.Column="0" Grid.Row="2" Width="70" Height="40" Background="PaleVioletRed" FontSize="10" Content="klickt mich">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Triggers>
@@ -128,6 +128,19 @@
         <!-- Slider ist die Quelle -->
         <!--<Slider Name="MySlider" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100"/>-->
         <Slider Name="MySlider" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100" IsSnapToTickEnabled="True"/> <!--IsSnapToTickEnabled:Nur ganzzählige Werte darstellen.-->
+
+
+        <!--Wir wollen zwei Zahlen eingeben und sofort die Summe berechnet bekommen. 
+            Dafür ist ein INotifyPropertyChanged Interface erforderlich, dafür muss man eine neue Klasse hinzufügen.
+            -->
+        <Label Grid.Column="1" Grid.Row="0" Content="Zahl1"></Label>
+        <TextBox Grid.Column="1" Grid.Row="0" Width="80" Height=" 25" Text="{Binding Path=Num1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Grid.Column="1" Grid.Row="1" Content="Zahl2"></Label>
+        <TextBox Grid.Column="1" Grid.Row="1" Width="80" Height=" 25" Text="{Binding Path=Num2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Grid.Column="1" Grid.Row="2" Content="Summe"></Label>
+        <TextBox Grid.Column="1" Grid.Row="2" Width="80" Height=" 25" Text="{Binding Path=Result, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                                                               <!--UpdateSourceTrigger=PropertyChanged um die änderungen sofort zu übernehmen-->
+
     </Grid>
     
 

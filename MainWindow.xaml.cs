@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace FirstGUI
 {
+    
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
@@ -34,10 +35,23 @@ namespace FirstGUI
         //// dies wird nichtmal vewendet oder angezeigt was es machen könnte... TOLL
 
 
+
+        // INotifyPropertyChanged Interface-
+        // es meldet sich wenn eine Pror geändert worden ist
+        public Sum SumObj { get; set; }
+        // WAS SOWAS FÜR UNS BEDEUTET WIRD NICHT RICHTIG ERKLÄRT...
+
+
         public MainWindow()     //das ist wie unsere Main in Konsolenapplikationen
         {
             InitializeComponent();
 
+            // INotifyPropertyChanged Interface-
+            // es meldet sich wenn eine Pror geändert worden ist
+            SumObj = new Sum { Num1 = "1", Num2 = "3" };
+            this.DataContext = SumObj;
+            //damit können wir alles testen... ENDLICH, SCHEI** ERKLÄRT.
+            // funktioniert, natürlich tut es, gelernt wird hier aber nichts!!
 
             ////// WAS WIR IN DER XAML Schreiben wird intern als CodeBehind Übersetzt und ausgeführt!!
             ////// Aber wenn wir es nur via CodeBehind setzen, dann ist es NICHT VERFÜGBAR in der xaml Entwurf view!!
@@ -98,6 +112,8 @@ namespace FirstGUI
 
             MySlider.Value = 33;
             MyTextBox.Text = MySlider.Value.ToString();
+
+
         }
 
         //Generierter event wenn click auf Button mit Sender und Argumente e...
